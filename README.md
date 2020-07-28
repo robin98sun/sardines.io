@@ -62,16 +62,19 @@ Services shall be deployed or removed in a resource pool by a service gateway, w
 ### Stage 5: Advanced routing in service gateway
 In the numerous scenarios of use cases, the deployment of a service runtime might be very complicated, which might involve reverse proxy, load balancing, route selection, service clusters or logic groups, etc. Therefore, the service runtimes managed by the service gateway also need corresponding routing mechanism, and that will be a responsibility of the service gateway at this time.
 
-### Stage 6: Replication and Scaling
+### Stage 6: Distributed Data Cells
+To access data everywhere from anywhere in a distributed system is too complicated to get perfect solutions. Here we planned to introduce a concept of distributed data cell, and hope to provide a moderate solution in most scenario.
+
+### Stage 7: Replication and Scaling
 So far, the whole system is running in single thread mode. Although there could be some workaround of certain deployment tool, but replication and scaling should be the responsibility of the service gateway, or at least initiated by it. It is the time to consider the Serverless pattern. However, Serverless is not necessarily to be the only solution. It depends on the specific runtime environment and its deployment mechanism.
 
-### Stage 7: Topics of automation
+### Stage 8: Topics of automation
 When all of the above are done, we could assume that the pathway between developer and distributed infrastructure is open. While it must be very awful to walk on it for everything by far is basically manual, the point is there is no gap on the way. Based on these manual interfaces, automation could be built. There could be countless topics of automation in almost every aspect of cloud computing, edge computing, IoT, etc. Developers shall only take care of business logics, leaving all the rest to scientists.
 
 # Sardines Code
 Currently, Sardines is developed in Typescript (Sardines.js) and is working on stage 5. The reason of firstly using Typescript is simply hope to keep a chance to build services in browsers and mobile devices, and to realize the deployment on heterogeneous infrastructure across both front-end and back-end.
 
-The Sardines.js project contain 7 sub-projects: Compile Time Tools, Runtime Core, Shoal(the service gateway), HTTP Provider, HTTP Driver, Built-in Services, and Docker Orchestrator.
+The Sardines.js project contain 7 sub-projects: [Compile Time Tools](https://github.com/robin98sun/sardines.compile-time-tools.js), [Runtime Core](https://github.com/robin98sun/sardines.core.js), [Shoal(the service gateway)](https://github.com/robin98sun/sardines.shoal.js), [HTTP Provider](https://github.com/robin98sun/sardines.service-provider.http.js), [HTTP Driver](https://github.com/robin98sun/sardines.service-driver.http.js), [Built-in Services(for advanced routing and replication)](https://github.com/robin98sun/sardines.built-in-services.js), and [Docker Orchestrator](https://github.com/robin98sun/sardines.docker.js).
 
 ## Architecture
 To be continued...
