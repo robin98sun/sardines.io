@@ -1,10 +1,10 @@
 # Sardines Project
 
 # One sentence introduction:
-The *Sardines Project* is a solution for seamlessly programming distributed systems in a monolithic and synchronous way.
+The ***Sardines Project*** is a solution for seamlessly programming distributed systems in a monolithic and synchronous way.
 
 # Relation with Serverless and FaaS
-*Sardines* is a kind of FaaS, but not necessarily involves Serverless
+***Sardines*** is a kind of **FaaS**, but not necessarily involves **Serverless**
 
 # Background
 [The first prototypical system of Sardines](./[2018]www-bnd-rej.pdf) [[23](#bnd)] was designed almost at the same time with the incipience of FaaS, which is now largely considered as a synonym of Serverless. While Sardines is  fundamentally different with Serverless, they actually share some basic philosophy about Cloud Computing, e.g., the function level decomposing of cloud application, integration/outsourcing the maintenance of Cloud infrastructure, hoping to provide a powerful interface for developers to efficiently leverage the computing power of cloud. 
@@ -13,12 +13,12 @@ The *Sardines Project* is a solution for seamlessly programming distributed syst
 FaaS, Function-as-a-Service, as Fig 1 illustrated, is a new programming interface that public cloud vendors have recently begun offering under the banner of serverless computing [[1](#2018-one-step-forward)]. 
 
 ![AWS Lambda Official Illustration](./imgs/serverless-arch-baord.png "AWS Lambda")
-Fig 1: AWS Lambda Official Illustration
+<br>Fig 1: AWS Lambda Official Illustration
 
 In general, as Fig 2 has shown, functions (usually in Node.js/Python/GoLang) are wrapped into containers which composited with full execution stack, triggered by events or direct invocations, and auto-scaled behind an API gateway. Such that in the serverless manner, a function can be independently deployed as an auto-scalable service, outsourcing all the extremely complicated details beyond its business logic to the cloud provider, and charged only for the resources (usually are CPU and memory) actually consumed when it is invoked. 
 
 ![General Serverless Architecture](./imgs/2020-07-27_general_serverless_architecture.png)
-Fig 2: General Serverless Architecture
+<br>Fig 2: General Serverless Architecture
 
 FaaS was first introduced to the cloud computing market by AWS Lambda in 2014. Then almost all the leading cloud providers announced similar products very quickly, e.g. Google Cloud Functions, MicroSoft Azure Functions, Alibaba Cloud Function, etc. And more akin open source projects emerged, such as Apache Openwhisk, OpenFaaS, Kubeless, Fn, etc. [[2](#2020-faasten)].
 
@@ -46,7 +46,11 @@ Besides the details of implementations in different runtime envrionments, is fun
 From the view of cloud providers, the serverless is a step forward toward developers, which provides a fine-grained programming interface to integrate the cloud infrastructure into their applications. However it does not narrow the gap impeding developers to leverage the immense computing power of cloud. To ultimately eliminate that gap, and to empower FaaS applicable in more areas of distributed systems other than cloud computing, we adopt the view of developers. Instead of the top-down mindset of cloud providers, the view of developers requires a bottom-up mindset to grow out a whole new ecosystem, from a set of succinct and intuitive programming interfaces.
 
 ## Overall Roadmap
+
+### Programming Interface Abstraction
 From the prospect of developers, the fundamental work is to maintain a set of highly abstract programming interfaces of the distributed systems no matter how the runtime envrionment changes.
+
+### Distributed Architecture Oriented 
 
 # References
 1. <a id="2018-one-step-forward"></a>J. M. Hellerstein, et al., Serverless computing: One step forward, two steps back, arXiv preprint arXiv:1812.03651.
