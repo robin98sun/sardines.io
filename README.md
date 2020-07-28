@@ -63,7 +63,7 @@ Services shall be deployed or removed in a resource pool by a service gateway, w
 In the numerous scenarios of use cases, the deployment of a service runtime might be very complicated, which might involve reverse proxy, load balancing, route selection, service clusters or logic groups, etc. Therefore, the service runtimes managed by the service gateway also need corresponding routing mechanism, and that will be a responsibility of the service gateway at this time.
 
 ### Stage 6: Distributed Data Cells
-To access data everywhere from anywhere in a distributed system is too complicated to get perfect solutions. Here we planned to introduce a concept of distributed data cell, and hope to provide a moderate solution in most scenario.
+To access data everywhere from anywhere in a distributed system is too complicated to get perfect solutions. Here we planned to introduce a concept of distributed data cell, and hope to provide a moderate solution in most scenarios.
 
 ### Stage 7: Replication and Scaling
 So far, the whole system is running in single thread mode. Although there could be some workaround of certain deployment tool, but replication and scaling should be the responsibility of the service gateway, or at least initiated by it. It is the time to consider the Serverless pattern. However, Serverless is not necessarily to be the only solution. It depends on the specific runtime environment and its deployment mechanism.
