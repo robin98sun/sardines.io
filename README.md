@@ -37,7 +37,7 @@ Literally, the term FaaS, Function-as-a-Service, only tells the story between a 
 
 Even if focused in the cloud computing area, Serverless is a feature of cloud infrastructure. Without Serverless, a function of cause can be transformed to an online service. The point is, can it auto-scale without Serverless?
 
-## Why choosing function as the granularity?
+## Why choose function as the granularity?
 If consider a service as a runtime of source code together with a communication protocol and an address, that the essence form in distributed systems, a service is analogical with a memory block which contains the instructions of a function together with its pointers in the stack, which is usually called an in-memory runtime of a function. And then, FaaS is summarizing the idea of transforming source code into runtimes in distributed systems at the granularity of function. 
 
 Besides the details of implementations in different runtime envrionments, is function a good choice of unit to be mapped as service? Since the Object Oriented system design or programming has been proven far more productive than Function Oriented ones, why don't transform objects instead? That might be far more complicated than just talking about the design of a FaaS framework. Simply put or think straightforwardly, how does objects come to the world without the implement of functions? Further more, objects might be unnecessary in many cases. In short, function is the smallest programming block, it has to be the first step.
