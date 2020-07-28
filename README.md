@@ -7,7 +7,7 @@ The *Sardines Project* is a solution for seamlessly programming distributed syst
 *Sardines* is a kind of FaaS, but not necessarily involves Serverless
 
 # Background
-The first prototypical system of Sardines was designed almost at the same time with the incipience of FaaS, which is now largely considered as a synonym of Serverless. While Sardines is  fundamentally different with Serverless, they actually share some basic philosophy about Cloud Computing, e.g., the function level decomposing of cloud application, integration/outsourcing the maintenance of Cloud infrastructure, hoping to provide a powerful interface for developers to efficiently leverage the computing power of cloud. 
+The first prototypical system of Sardines[23](#bnd) was designed almost at the same time with the incipience of FaaS, which is now largely considered as a synonym of Serverless. While Sardines is  fundamentally different with Serverless, they actually share some basic philosophy about Cloud Computing, e.g., the function level decomposing of cloud application, integration/outsourcing the maintenance of Cloud infrastructure, hoping to provide a powerful interface for developers to efficiently leverage the computing power of cloud. 
 
 ## FaaS and Serverless
 FaaS, Function-as-a-Service, as Fig 1 illustrated, is a new programming interface that public cloud vendors have recently begun offering under the banner of serverless computing [1](#2018-one-step-forward). 
@@ -72,3 +72,4 @@ Share on, Proceedings of the 5th International Workshop on Serverless ComputingD
 20. <a id="2018-SOCA"></a>Michael Wurster, et al., Modeling and Automated Deployment of Serverless Applications Using TOSCA, Proceedings of 2018 IEEE 11th Conference on Service-Oriented Computing and Applications (SOCA).
 21. <a id="2020-Skedulix"></a>Anirban Das, et al., Skedulix: Hybrid Cloud Scheduling for Cost-Efficient Execution of Serverless Applications, arXiv:2006.03720.
 22. <a id="2019-SERVICES"></a>Andrei Palade, Aqeel Kazmi, Siobhán Clarke, An Evaluation of Open Source Serverless Computing Frameworks Support at the Edge, Proceedings of 2019 IEEE World Congress on Services (SERVICES).
+23. <a id="bnd"></a>Lin Sun, BND: A Free-to-Decompose Function-as-a-Service Application Framework, https://github.com/robin98sun/sardines.io/blob/master/%5B2018%5Dwww-bnd-rej.pdf
