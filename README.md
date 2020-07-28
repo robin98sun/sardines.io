@@ -68,7 +68,12 @@ So far, the whole system is running in single thread mode. Although there could 
 ### Stage 7: Topics of automation
 When all of the above are done, we could assume that the pathway between developer and distributed infrastructure is open. While it must be very awful to walk on it for everything by far is basically manual, the point is there is no gap on the way. Based on these manual interfaces, automation could be built. There could be countless topics of automation in almost every aspect of cloud computing, edge computing, IoT, etc. Developers shall only take care of business logics, leaving all the rest to scientists.
 
-# Sardines Architecture
+# Sardines Code
+Currently, Sardines is developed in Typescript (Sardines.js) and is working on stage 5. The reason of firstly using Typescript is simply hope to keep a chance to build services in browsers and mobile devices, and to realize the deployment on heterogeneous infrastructure across both front-end and back-end.
+
+The Sardines.js project contain 7 sub-projects: Compile Time Tools, Runtime Core, Shoal(the service gateway), HTTP Provider, HTTP Driver, Built-in Services, and Docker Orchestrator.
+
+## Architecture
 To be continued...
 
 # References
