@@ -7,18 +7,18 @@ The ***Sardines Project*** is a solution for seamlessly programming distributed 
 ***Sardines*** is a kind of **FaaS**, but not necessarily involves **Serverless**
 
 # Background
-[The first prototypical system of Sardines](./[2018]www-bnd-rej.pdf) [[23](#bnd)] was designed almost at the same time with the incipience of FaaS, which is now largely considered as a synonym of Serverless. While Sardines is  fundamentally different with Serverless, they actually share some basic philosophy about Cloud Computing, e.g., the function level decomposing of cloud application, integration/outsourcing the maintenance of Cloud infrastructure, hoping to provide a powerful interface for developers to efficiently leverage the computing power of cloud. 
+[The first prototypical system of Sardines](./[2018]www-bnd-rej.pdf) [[23](#bnd)] (*please excuse the poor writing of this article*) was designed almost at the same time with the incipience of FaaS, which is now largely considered as a synonym of Serverless. While Sardines is  fundamentally different with Serverless, they actually share some basic philosophy about Cloud Computing, e.g., the function level decomposing of cloud application, integration/outsourcing the maintenance of Cloud infrastructure, hoping to provide a powerful interface for developers to efficiently leverage the computing power of cloud. 
 
 ## FaaS and Serverless
 FaaS, Function-as-a-Service, as Fig 1 illustrated, is a new programming interface that public cloud vendors have recently begun offering under the banner of serverless computing [[1](#2018-one-step-forward)]. 
 
 ![AWS Lambda Official Illustration](./imgs/serverless-arch-baord.png "AWS Lambda")
-<br>Fig 1: AWS Lambda Official Illustration
+<br><center>Fig 1: AWS Lambda Official Illustration</center>
 
 In general, as Fig 2 has shown, functions (usually in Node.js/Python/GoLang) are wrapped into containers which composited with full execution stack, triggered by events or direct invocations, and auto-scaled behind an API gateway. Such that in the serverless manner, a function can be independently deployed as an auto-scalable service, outsourcing all the extremely complicated details beyond its business logic to the cloud provider, and charged only for the resources (usually are CPU and memory) actually consumed when it is invoked. 
 
 ![General Serverless Architecture](./imgs/2020-07-27_general_serverless_architecture.png)
-<br>Fig 2: General Serverless Architecture
+<br><center>Fig 2: General Serverless Architecture</center>
 
 FaaS was first introduced to the cloud computing market by AWS Lambda in 2014. Then almost all the leading cloud providers announced similar products very quickly, e.g. Google Cloud Functions, MicroSoft Azure Functions, Alibaba Cloud Function, etc. And more akin open source projects emerged, such as Apache Openwhisk, OpenFaaS, Kubeless, Fn, etc. [[2](#2020-faasten)].
 
@@ -28,7 +28,7 @@ So far, many concerns about FaaS still remain open, e.g. slow cold-start [[11](#
 
 However, many researches addressing these problems are also on the way. Such as a GPU enabled serverless framework which deploy services faster than existing serverless computing framework using CPU [[15](#2018-PDP)]; FnSched, a function-level scheduler designed to minimize provider resource costs while meeting customer performance requirements [[16](#2019-WOSC)]; And in deep learning, there is a generic memory sharing technique TrIMS, that enables constant data to be shared across processes or containers while still maintaining isolation between users, to solve the inefficiency of moving large amount of data within and across server when using FaaS as prediction pipelines [[17](#2019-CLOUD)].
 
-Moreover, FaaS has drew large enthusiasm to increase productivity, such as ToLambda provides automatic conversion of Java monolith application code into AWS Lambda Node.js microservices [[18](#2019-IWoR)], and a dynamic transpiler transforms applications into optimized multi-function serverless orchestrations to increased developer productivity [[19](#2019-FASW)], and TOSCA, an event-driven deployment modeling approach using the standard Topology and Orchestration Specification for Cloud Applications that fully employs the suggested standard lifecycle to provision and manage multi-cloud serverless applications [[20](2018-SOCA)]. And Anirban et al presented a framework for scheduling multi-function serverless applications over a hybrid public-private cloud to minimizes the cost of public cloud use [[21](#2020-Skedulix)]
+Moreover, FaaS has drew large enthusiasm to increase productivity, such as ToLambda provides automatic conversion of Java monolith application code into AWS Lambda Node.js microservices [[18](#2019-IWoR)], and a dynamic transpiler transforms applications into optimized multi-function serverless orchestrations to increased developer productivity [[19](#2019-FASW)], and TOSCA, an event-driven deployment modeling approach using the standard Topology and Orchestration Specification for Cloud Applications that fully employs the suggested standard lifecycle to provision and manage multi-cloud serverless applications [[20](#2018-SOCA)]. And Anirban et al presented a framework for scheduling multi-function serverless applications over a hybrid public-private cloud to minimizes the cost of public cloud use [[21](#2020-Skedulix)]
 
 In sum, the auto-scalability and the pay-as-you-go manner of serverless computing, together with the great flexibility derived from function-granule isolation, exposed great potential of cloud computing, thereby attracted considerable attention from both academics and industry, in spite of massive limitations of incipient development. As for the relationship between FaaS and Serverless, it might has been a consensus of cloud computing that FaaS is a kind of Serverless, and they might be exchangeable concepts in many cases.
 
@@ -47,10 +47,29 @@ From the view of cloud providers, the serverless is a step forward toward develo
 
 ## Overall Roadmap
 
-### Programming Interface Abstraction
+### &#9745; Stage 1: Programming Interface Abstraction
 From the prospect of developers, the fundamental work is to maintain a set of highly abstract programming interfaces of the distributed systems no matter how the runtime envrionment changes.
 
-### Distributed Architecture Oriented 
+### &#9745; Stage 2: Distributed Architecture Oriented Compilation
+To transform funtions into service runtimes and keep from the variance of runtime environments, an intermediate representation of service is required, which is independent of any communication protocols. The compiler decomposes source code into a set of functions and then a set of this kind of intermediate representation.
+
+### &#9745; Stage 3: A set of ***Service Providers*** and ***Service drivers*** for communication protocols
+A pair of service provider and service driver is used to deploy the intermediate representation of service in a certain runtime environment.
+
+### &#9745; Stage 4: A ***Service Gateway*** and a set of service runtime CRUD tools
+Services shall be deployed or removed in a resource pool by a service gateway, which in turns records or deletes the runtime information of services, such as the communication protocol, runtime address, initialization parameters and so on.
+
+### Stage 5: Advanced routing in service gateway
+In the numerous scenarios of use cases, the deployment of a service runtime might be very complicated, which might involve reverse proxy, load balancing, route selection, service clusters or logic groups, etc. Therefore, the service runtimes managed by the service gateway also need corresponding routing mechanism, and that will be a responsibility of the service gateway at this time.
+
+### Stage 6: Replication and Scaling
+So far, the whole system is running in single thread mode. Although there could be some workaround of certain deployment tool, but replication and scaling should be the responsibility of the service gateway, or at least initiated by it. It is the time to consider the Serverless pattern. However, Serverless is not necessarily to be the only solution. It depends on the specific runtime environment and its deployment mechanism.
+
+### Stage 7: Topics of automation
+When all of the above are done, we could assume that the pathway between developer and distributed infrastructure is open. While it must be very awful to walk on it for everything by far is basically manual, the point is there is no gap on the way. Based on these manual interfaces, automation could be built. There could be countless topics of automation in almost every aspect of cloud computing, edge computing, IoT, etc. Developers shall only take care of business logics, leaving all the rest to scientists.
+
+# Sardines Architecture
+To be continued...
 
 # References
 1. <a id="2018-one-step-forward"></a>J. M. Hellerstein, et al., Serverless computing: One step forward, two steps back, arXiv preprint arXiv:1812.03651.
