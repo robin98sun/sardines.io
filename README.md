@@ -7,7 +7,7 @@ The *Sardines Project* is a solution for seamlessly programming distributed syst
 *Sardines* is a kind of FaaS, but not necessarily involves Serverless
 
 # Background
-The first prototypical system of Sardines[23](#bnd) was designed almost at the same time with the incipience of FaaS, which is now largely considered as a synonym of Serverless. While Sardines is  fundamentally different with Serverless, they actually share some basic philosophy about Cloud Computing, e.g., the function level decomposing of cloud application, integration/outsourcing the maintenance of Cloud infrastructure, hoping to provide a powerful interface for developers to efficiently leverage the computing power of cloud. 
+[The first prototypical system of Sardines](./[2018]www-bnd-rej.pdf)[23](#bnd) was designed almost at the same time with the incipience of FaaS, which is now largely considered as a synonym of Serverless. While Sardines is  fundamentally different with Serverless, they actually share some basic philosophy about Cloud Computing, e.g., the function level decomposing of cloud application, integration/outsourcing the maintenance of Cloud infrastructure, hoping to provide a powerful interface for developers to efficiently leverage the computing power of cloud. 
 
 ## FaaS and Serverless
 FaaS, Function-as-a-Service, as Fig 1 illustrated, is a new programming interface that public cloud vendors have recently begun offering under the banner of serverless computing [1](#2018-one-step-forward). 
